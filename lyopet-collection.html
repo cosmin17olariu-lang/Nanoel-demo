@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toate produsele LYOPET · Nanoel</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── PAGE SPECIFIC ── */
+.collection-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 56px 48px 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+  border-bottom: 0.5px solid var(--border);
+}
+.col-eyebrow {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.col-title {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.col-subtitle {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+.col-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.col-count-num {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+}
+.col-count-label {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8B8780;
+}
+.col-sort {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dark);
+  border: none;
+  border-bottom: 0.5px solid var(--border);
+  background: transparent;
+  padding: 6px 0;
+  outline: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* ── COLLECTION BODY ── */
+.collection-body {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px 80px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  border-right: 0.5px solid var(--border);
+  padding: 32px 32px 32px 0;
+}
+.active-filters {
+  margin-bottom: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.filter-pill {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 0.5px solid var(--accent);
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.filter-pill:hover { background: #F5E6C0; }
+.clear-filters {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--accent);
+  cursor: pointer;
+}
+
+.filter-section {
+  margin-bottom: 28px;
+}
+.filter-title {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--dark);
+  border-bottom: 0.5px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  cursor: pointer;
+}
+.filter-option:hover .filter-label { color: var(--accent); }
+.checkbox {
+  width: 14px;
+  height: 14px;
+  border: 0.5px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+}
+.checkbox.checked {
+  border-color: var(--accent);
+}
+.checkbox.checked::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  display: block;
+}
+.filter-label {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+  flex: 1;
+  transition: color 0.15s;
+}
+.filter-count {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  color: #8B8780;
+  letter-spacing: 1px;
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.price-input {
+  flex: 1;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: var(--dark);
+  border: none;
+  border-bottom: 0.5px solid var(--border);
+  background: transparent;
+  padding: 4px 0;
+  outline: none;
+  width: 0;
+}
+.price-sep {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  color: #8B8780;
+}
+
+/* ── PRODUCT GRID ── */
+.products-area {
+  padding: 32px 0 0 40px;
+}
+.product-grid-wrap {
+  border: 0.5px solid var(--border);
+}
+.product-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.p-card {
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.p-card:hover { opacity: 0.9; }
+.p-card:nth-child(2n) { border-right: none; }
+.p-card:nth-last-child(-n+2) { border-bottom: none; }
+
+.p-img {
+  background: #F5E6C0;
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-img-placeholder {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--border);
+}
+.badge-left {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 0.5px solid var(--accent);
+  background: var(--cream);
+  padding: 3px 8px;
+}
+.badge-right {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--accent-light);
+  padding: 3px 8px;
+}
+
+.p-body {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.p-brand {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.p-name {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.3;
+}
+.p-desc {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex: 1;
+}
+.p-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.p-tag {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8B8780;
+  border: 0.5px solid var(--border);
+  padding: 2px 7px;
+}
+.p-footer {
+  padding: 12px 18px;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.p-price-wrap { display: flex; flex-direction: column; }
+.p-from {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8B8780;
+}
+.p-price {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: var(--dark);
+}
+.p-cta {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dark);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--accent);
+  padding-bottom: 1px;
+}
+
+/* ── PAGINATION ── */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+.page-arrow {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dark);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border);
+  padding-bottom: 1px;
+  cursor: pointer;
+}
+.page-num {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding-bottom: 2px;
+  border-bottom: 0.5px solid transparent;
+  transition: border-color 0.15s;
+}
+.page-num.active {
+  color: var(--dark);
+  border-bottom-color: var(--accent);
+}
+.page-num:hover { border-bottom-color: var(--border); }
+</style>
+</head>
+<body>
+
+<div class="promo-bar">
+  Livrare gratuita la comenzi peste 150 RON &nbsp;·&nbsp; <a href="#">Descopera brandurile noastre exclusive →</a>
+</div>
+
+<nav class="main-nav">
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="#">Caini</a></li>
+      <li><a href="lyopet.html" style="color:var(--accent)">Branduri</a></li>
+      <li><a href="#">Pisici</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html" class="logo-text">
+        <svg class="logo-badge" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="#2C2118"/>
+          <circle cx="50" cy="50" r="44" fill="none" stroke="#C8922A" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <g fill="#C8922A"><ellipse cx="50" cy="58" rx="14" ry="10"/><circle cx="50" cy="42" r="9"/><ellipse cx="43" cy="36" rx="4" ry="7" transform="rotate(-15 43 36)"/><ellipse cx="57" cy="36" rx="4" ry="7" transform="rotate(15 57 36)"/><rect x="37" y="66" width="5" height="10" rx="2"/><rect x="44" y="67" width="5" height="9" rx="2"/><rect x="51" y="67" width="5" height="9" rx="2"/><rect x="58" y="66" width="5" height="10" rx="2"/><path d="M64 56 Q74 48 70 40" stroke="#C8922A" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
+          <text x="50" y="88" text-anchor="middle" font-family="Arial" font-size="8" letter-spacing="2" fill="#C8922A">PET SHOP</text>
+        </svg>
+        NAN<span style="color:var(--accent)">OEL</span>
+      </a>
+    </div>
+    <div class="nav-icons">
+      <ul class="nav-links" style="margin-right:16px">
+        <li><a href="#">Igiena</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <button class="nav-icon-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      <button class="nav-icon-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button class="nav-icon-btn" style="position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-count">0</span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Acasa</a><span class="sep">—</span>
+    <a href="#">Branduri</a><span class="sep">—</span>
+    <a href="lyopet.html">LYOPET</a><span class="sep">—</span>
+    <span class="current">Toate produsele</span>
+  </div>
+</div>
+
+<!-- COLLECTION HEADER -->
+<div class="collection-header">
+  <div>
+    <div class="col-eyebrow">LYOPET · Hrana pentru caini</div>
+    <h1 class="col-title">Toate produsele</h1>
+    <p class="col-subtitle">Hrana uscata, liofilizata, suplimente si snacks — selectia completa LYOPET disponibila la Nanoel.</p>
+  </div>
+  <div class="col-meta">
+    <div class="col-count-num">14</div>
+    <div class="col-count-label">produse</div>
+    <select class="col-sort">
+      <option>Recomandate</option>
+      <option>Pret crescator</option>
+      <option>Pret descrescator</option>
+      <option>Cele mai vandute</option>
+    </select>
+  </div>
+</div>
+
+<!-- COLLECTION BODY -->
+<div class="collection-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="active-filters">
+      <span class="filter-pill">Hrana uscata ×</span>
+      <span class="filter-pill">Rase mici ×</span>
+      <span class="clear-filters">Sterge tot</span>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-title">Tip produs</div>
+      <label class="filter-option">
+        <div class="checkbox checked"></div>
+        <span class="filter-label">Hrana uscata</span>
+        <span class="filter-count">8</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Liofilizata BARF</span>
+        <span class="filter-count">3</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Suplimente</span>
+        <span class="filter-count">2</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Snacks</span>
+        <span class="filter-count">1</span>
+      </label>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-title">Talia cainelui</div>
+      <label class="filter-option">
+        <div class="checkbox checked"></div>
+        <span class="filter-label">Rase mici</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Rase medii</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Rase mari</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Toate rasele</span>
+      </label>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-title">Proteina principala</div>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Fazan & Rata</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Miel & Vita</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Peste</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Pui</span>
+      </label>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-title">Varsta</div>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Adult</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Senior / Light</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Puppy</span>
+      </label>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-title">Pret (RON)</div>
+      <div class="price-inputs">
+        <input class="price-input" type="text" placeholder="Min" value="0">
+        <span class="price-sep">—</span>
+        <input class="price-input" type="text" placeholder="Max" value="500">
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-title">Caracteristici</div>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Grain Free</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Fara conservanti</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Hipoalergenic</span>
+      </label>
+      <label class="filter-option">
+        <div class="checkbox"></div>
+        <span class="filter-label">Holistic</span>
+      </label>
+    </div>
+  </aside>
+
+  <!-- PRODUCTS -->
+  <div class="products-area">
+    <div class="product-grid-wrap">
+      <div class="product-grid-2">
+
+        <!-- 1 -->
+        <div class="p-card" onclick="location.href='lyopet-farmer-dog.html'">
+          <div class="p-img">
+            <span class="p-img-placeholder">imagine produs</span>
+            <span class="badge-left">Cel mai vandut</span>
+            <span class="badge-right">Nou</span>
+          </div>
+          <div class="p-body">
+            <div class="p-brand">LYOPET</div>
+            <div class="p-name">Farmer Dog Adult Mini — Fazan & Rata</div>
+            <p class="p-desc">Proteina de vanat pentru rase mici. Hipoalergenic, fara alergenele comune.</p>
+            <div class="p-tags">
+              <span class="p-tag">Rase mici</span>
+              <span class="p-tag">Grain Free</span>
+              <span class="p-tag">Vanat</span>
+            </div>
+          </div>
+          <div class="p-footer">
+            <div class="p-price-wrap">
+              <span class="p-from">de la</span>
+              <span class="p-price">105 RON</span>
+            </div>
+            <a href="lyopet-farmer-dog.html" class="p-cta">Vezi produs</a>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="p-card">
+          <div class="p-img">
+            <span class="p-img-placeholder">imagine produs</span>
+            <span class="badge-left">Recomandat</span>
+          </div>
+          <div class="p-body">
+            <div class="p-brand">LYOPET</div>
+            <div class="p-name">Breeder Dog Adult — Peste</div>
+            <p class="p-desc">Formula bogata in Omega 3 din peste mediteranean. Pentru toate rasele.</p>
+            <div class="p-tags">
+              <span class="p-tag">Toate rasele</span>
+              <span class="p-tag">Omega 3</span>
+            </div>
+          </div>
+          <div class="p-footer">
+            <div class="p-price-wrap">
+              <span class="p-from">de la</span>
+              <span class="p-price">135 RON</span>
+            </div>
+            <a href="#" class="p-cta">Vezi produs</a>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="p-card">
+          <div class="p-img">
+            <span class="p-img-placeholder">imagine produs</span>
+          </div>
+          <div class="p-body">
+            <div class="p-brand">LYOPET</div>
+            <div class="p-name">Breeder Miel & Vita</div>
+            <p class="p-desc">Proteina dubla pentru caini cu activitate ridicata. Pret per portie optim.</p>
+            <div class="p-tags">
+              <span class="p-tag">Toate rasele</span>
+              <span class="p-tag">Activi</span>
+            </div>
+          </div>
+          <div class="p-footer">
+            <div class="p-price-wrap">
+              <span class="p-from">de la</span>
+              <span class="p-price">122 RON</span>
+            </div>
+            <a href="#" class="p-cta">Vezi produs</a>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="p-card">
+          <div class="p-img">
+            <span class="p-img-placeholder">imagine produs</span>
+            <span class="badge-right">Nou</span>
+          </div>
+          <div class="p-body">
+            <div class="p-brand">LYOPET</div>
+            <div class="p-name">Cool Senior / Light — Mediterranean Fish</div>
+            <p class="p-desc">Formula speciala pentru seniori si caini cu tendinta spre supraponderalitate.</p>
+            <div class="p-tags">
+              <span class="p-tag">Senior</span>
+              <span class="p-tag">Light</span>
+              <span class="p-tag">Holistic</span>
+            </div>
+          </div>
+          <div class="p-footer">
+            <div class="p-price-wrap">
+              <span class="p-from"></span>
+              <span class="p-price">464 RON</span>
+            </div>
+            <a href="#" class="p-cta">Vezi produs</a>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="p-card">
+          <div class="p-img">
+            <span class="p-img-placeholder">imagine produs</span>
+            <span class="badge-left">Special</span>
+          </div>
+          <div class="p-body">
+            <div class="p-brand">LYOPET</div>
+            <div class="p-name">Colostru Bioactiv de Capra Liofilizat 30g</div>
+            <p class="p-desc">Supliment rar. Imunoglobuline intacte, liofilizat la rece pentru activitate biologica maxima.</p>
+            <div class="p-tags">
+              <span class="p-tag">Supliment</span>
+              <span class="p-tag">Imunitate</span>
+            </div>
+          </div>
+          <div class="p-footer">
+            <div class="p-price-wrap">
+              <span class="p-from"></span>
+              <span class="p-price">150 RON</span>
+            </div>
+            <a href="#" class="p-cta">Vezi produs</a>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="p-card">
+          <div class="p-img">
+            <span class="p-img-placeholder">imagine produs</span>
+          </div>
+          <div class="p-body">
+            <div class="p-brand">LYOPET</div>
+            <div class="p-name">Adult Maxi — Miel & Legume</div>
+            <p class="p-desc">Formula echilibrata pentru rase mari. Grain Free complet, digestie usoara.</p>
+            <div class="p-tags">
+              <span class="p-tag">Rase mari</span>
+              <span class="p-tag">Grain Free</span>
+            </div>
+          </div>
+          <div class="p-footer">
+            <div class="p-price-wrap">
+              <span class="p-from">de la</span>
+              <span class="p-price">118 RON</span>
+            </div>
+            <a href="#" class="p-cta">Vezi produs</a>
+          </div>
+        </div>
+
+      </div><!-- /grid -->
+    </div><!-- /wrap -->
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <span class="page-arrow">← Anterior</span>
+      <span class="page-num active">1</span>
+      <span class="page-num">2</span>
+      <span class="page-num">3</span>
+      <span class="page-arrow">Urmator →</span>
+    </div>
+  </div><!-- /products-area -->
+
+</div><!-- /collection-body -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <span class="footer-brand-name">NANOEL</span>
+      <p class="footer-tagline">Distribuitor exclusiv al brandurilor LYOPET, EGEO, AELLIS si PerfectCare in Romania.</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Magazine</span>
+      <ul class="footer-links">
+        <li><a href="#">Hrana pentru caini</a></li>
+        <li><a href="#">Hrana pentru pisici</a></li>
+        <li><a href="#">Produse de igiena</a></li>
+        <li><a href="#">Suplimente</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Branduri</span>
+      <ul class="footer-links">
+        <li><a href="lyopet.html">LYOPET</a></li>
+        <li><a href="egeo.html">EGEO</a></li>
+        <li><a href="aellis.html">AELLIS</a></li>
+        <li><a href="perfectcare.html">PerfectCare</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Informatii</span>
+      <ul class="footer-links">
+        <li><a href="#">Despre Nanoel</a></li>
+        <li><a href="#">Blog nutritie</a></li>
+        <li><a href="#">Contact & Suport</a></li>
+        <li><a href="#">Livrare & Retur</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Nanoel SRL · nanoel.ro</span>
+    <div class="footer-legal">
+      <a href="#">Termeni si conditii</a>
+      <a href="#">Confidentialitate</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Checkbox toggle
+document.querySelectorAll('.filter-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    const cb = opt.querySelector('.checkbox');
+    cb.classList.toggle('checked');
+  });
+});
+// Pagination
+document.querySelectorAll('.page-num').forEach(p => {
+  p.addEventListener('click', () => {
+    document.querySelectorAll('.page-num').forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+  });
+});
+// Clear filters
+document.querySelector('.clear-filters').addEventListener('click', () => {
+  document.querySelectorAll('.checkbox.checked').forEach(cb => cb.classList.remove('checked'));
+  document.querySelectorAll('.filter-pill').forEach(p => p.remove());
+});
+</script>
+</body>
+</html>

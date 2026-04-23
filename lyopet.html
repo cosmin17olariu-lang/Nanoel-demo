@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYOPET — Hrana liofilizata pentru caini · Nanoel</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .hero { background: #2C2118; }
+  .hero-eyebrow { color: #C8922A; }
+  .hero-headline em { color: #E8B84B; }
+  .hero-deco-word { color: #E8B84B; }
+  .hero-deco-label { color: #6B5840; }
+  .ingredients-section { background: #2C2118; }
+  .ingredients-headline { color: var(--text-on-dark); }
+  .ingredients-grid { border-color: #444441; }
+  .ingredient-cell { border-color: #444441; }
+  .ingredient-desc { color: var(--text-muted-dark); }
+  .ingredient-benefit { color: #7A6045; }
+  .quote-section { background: #2C2118; }
+  .quote-text { color: var(--text-on-dark); }
+  .brand-nav-footer { background: #2C2118; }
+  .pillars-grid { grid-template-columns: repeat(3, 1fr); }
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
+</style>
+</head>
+<body>
+
+<div class="promo-bar">
+  Livrare gratuita la comenzi peste 150 RON &nbsp;·&nbsp; <a href="#">Descopera brandurile noastre exclusive →</a>
+</div>
+
+<nav class="main-nav">
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="#">Caini</a></li>
+      <li><a href="#">Pisici</a></li>
+      <li><a href="#">Igiena</a></li>
+    </ul>
+    <div class="nav-logo">
+      <a href="index.html" class="logo-text">
+        <svg class="logo-badge" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="#2C2118"/>
+          <circle cx="50" cy="50" r="44" fill="none" stroke="#C8922A" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <g fill="#C8922A">
+            <ellipse cx="50" cy="58" rx="14" ry="10"/>
+            <circle cx="50" cy="42" r="9"/>
+            <ellipse cx="43" cy="36" rx="4" ry="7" transform="rotate(-15 43 36)"/>
+            <ellipse cx="57" cy="36" rx="4" ry="7" transform="rotate(15 57 36)"/>
+            <rect x="37" y="66" width="5" height="10" rx="2"/>
+            <rect x="44" y="67" width="5" height="9" rx="2"/>
+            <rect x="51" y="67" width="5" height="9" rx="2"/>
+            <rect x="58" y="66" width="5" height="10" rx="2"/>
+            <path d="M64 56 Q74 48 70 40" stroke="#C8922A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          </g>
+          <text x="50" y="88" text-anchor="middle" font-family="Arial" font-size="8" letter-spacing="2" fill="#C8922A">PET SHOP</text>
+        </svg>
+        NANOEL
+      </a>
+    </div>
+    <div class="nav-icons">
+      <ul class="nav-links" style="margin-right:16px">
+        <li><a href="branduri.html">Branduri</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <button class="nav-icon-btn" aria-label="Cauta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      <button class="nav-icon-btn" aria-label="Cont"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button class="nav-icon-btn" aria-label="Cos" style="position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-count">0</span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Acasa</a><span class="sep">—</span>
+    <a href="#">Branduri</a><span class="sep">—</span>
+    <span class="current">LYOPET</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Brand · Hrana pentru caini</p>
+      <h1 class="hero-headline">Natura, liofilizata<br>cu <em>grija.</em></h1>
+      <p class="hero-sub">LYOPET produce hrana prin liofilizare la temperaturi scazute — pastrand toti nutrientii, vitaminele si aromele ingredientelor proaspete.</p>
+      <a href="#produse" class="hero-cta">Descopera produsele →</a>
+    </div>
+    <div class="hero-deco">
+      <div class="hero-deco-word">LYOPET</div>
+      <div class="hero-deco-label" style="color:#6B5840;">Liofilizat la rece · Ingrediente reale · Fara aditivi</div>
+    </div>
+  </div>
+</section>
+
+<!-- POVESTE -->
+<section class="story-section">
+  <div class="asym">
+    <div class="side"><span class="section-label">Povestea</span></div>
+    <div>
+      <h2 class="story-headline">Un brand construit pe o singura intrebare: ce ar manca un caine liber?</h2>
+      <div class="story-body">
+        <p>LYOPET porneste de la principiul ca hrana unui caine ar trebui sa semene cu ce ar gasi in natura — carne reala, fructe reale, fara faina, fara conservanti artificiali.</p>
+        <p>Prin liofilizare — inghetare rapida urmata de uscare in vid — mineralele, vitaminele si aromele sunt complet pastrate. Fiecare nugget contine 80% carne si 20% legume si fructe. Fara cereale, fara porumb, fara grau.</p>
+        <p>La Nanoel, am ales LYOPET pentru ca e singurul brand pe care l-am gasit unde eticheta nu ascunde nimic. Stii exact ce mananca cainele tau.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 PILONI -->
+<section class="pillars-section">
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-number">0</div>
+      <div class="pillar-label">Conservanti artificiali</div>
+      <p class="pillar-desc">Nicio reteta LYOPET nu contine conservanti, coloranti sau arome artificiale.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">80%</div>
+      <div class="pillar-label">Carne in fiecare nugget</div>
+      <p class="pillar-desc">Plus 20% legume si fructe. Echilibru nutritional complet, fara fillers.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">100%</div>
+      <div class="pillar-label">Ingrediente identificabile</div>
+      <p class="pillar-desc">Fiecare ingredient este real, trasabil si de calitate umana.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTE -->
+<section class="ingredients-section">
+  <div class="asym" style="padding-top: 0;">
+    <div class="side"><span class="section-label" style="color:var(--accent);">Ingrediente</span></div>
+    <div>
+      <h2 class="ingredients-headline">Ce intra in fiecare punga.</h2>
+      <div class="ingredients-grid">
+        <div class="ingredient-cell">
+          <div class="ingredient-name">Carne de fazan</div>
+          <p class="ingredient-desc">Proteina slaba, bogata in aminoacizi. Ideala pentru caini cu sensibilitati la pui sau vita.</p>
+          <div class="ingredient-benefit">Muschi · Imunitate</div>
+        </div>
+        <div class="ingredient-cell">
+          <div class="ingredient-name">Rata de ferma</div>
+          <p class="ingredient-desc">Omega 3 si 6 naturali. Sustine blana lucioasa si pielea sanatoasa.</p>
+          <div class="ingredient-benefit">Blana · Piele</div>
+        </div>
+        <div class="ingredient-cell">
+          <div class="ingredient-name">Peste mediteranean</div>
+          <p class="ingredient-desc">DHA si EPA pentru sanatatea creierului si articulatii suple.</p>
+          <div class="ingredient-benefit">Creier · Articulatii</div>
+        </div>
+        <div class="ingredient-cell">
+          <div class="ingredient-name">Colostru bioactiv de capra</div>
+          <p class="ingredient-desc">Liofilizat la rece, imunoglobuline intacte pentru imunitate si recuperare.</p>
+          <div class="ingredient-benefit">Imunitate · Recuperare</div>
+        </div>
+        <div class="ingredient-cell">
+          <div class="ingredient-name">Miel si vita</div>
+          <p class="ingredient-desc">Proteina dubla pentru rase mari si caini activi.</p>
+          <div class="ingredient-benefit">Muschi · Satietate</div>
+        </div>
+        <div class="ingredient-cell">
+          <div class="ingredient-name">Probiotice & prebiotice</div>
+          <p class="ingredient-desc">Digestie imbunatatita si absorbtie superioara a nutrientilor.</p>
+          <div class="ingredient-benefit">Digestie · Sanatate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUSE -->
+<section class="products-section" id="produse">
+  <div class="section-inner">
+    <div class="asym" style="padding:0; margin-bottom:48px;">
+      <div class="side"><span class="section-label">Produsele noastre LYOPET</span></div>
+      <div class="products-header">
+        <h2 class="products-title">Cele mai cautate retete.</h2>
+        <p class="products-sub">Selectie bazata pe comenzile clientilor Nanoel si pe profilul nutritional al fiecarui produs.</p>
+      </div>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-img"><span class="product-img-label">imagine produs</span></div>
+        <span class="product-badge">Cel mai vandut</span>
+        <div class="product-brand">LYOPET</div>
+        <div class="product-name">Farmer Dog Adult Mini<br>Fazan & Rata</div>
+        <p class="product-desc">Proteina de vanat pentru rase mici. Hipoalergenic, fara alergenele comune. Ideal pentru caini cu stomacuri sensibile sau alergii la pui.</p>
+        <div class="product-price">de la 105 RON</div>
+        <a href="#" class="product-cta">Adauga in cos →</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><span class="product-img-label">imagine produs</span></div>
+        <span class="product-badge">Cel mai profitabil</span>
+        <div class="product-brand">LYOPET</div>
+        <div class="product-name">Breeder<br>Miel & Vita</div>
+        <p class="product-desc">Formula pentru caini cu activitate ridicata si breeders. Sac mare, pret per portie optim. Proteina dubla din miel si vita certificata.</p>
+        <div class="product-price">de la 122 RON</div>
+        <a href="#" class="product-cta">Adauga in cos →</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><span class="product-img-label">imagine produs</span></div>
+        <span class="product-badge">Recomandat de noi</span>
+        <div class="product-brand">LYOPET</div>
+        <div class="product-name">Colostru Bioactiv de Capra<br>Liofilizat 30g</div>
+        <p class="product-desc">Supliment rar pe piata romaneasca. Imunoglobuline intacte, liofilizat la rece pentru activitate biologica maxima.</p>
+        <div class="product-price">150 RON</div>
+        <a href="#" class="product-cta">Adauga in cos →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band" style="background: var(--cream-warm);">
+  <h2 class="cta-headline">Descopera intreaga gama LYOPET.</h2>
+  <p class="cta-sub">Hrana uscata, liofilizata, suplimente si snacks — toate disponibile cu livrare rapida.</p>
+  <a href="#" class="cta-link">Vezi toate produsele LYOPET →</a>
+</div>
+
+<!-- CITAT -->
+<section class="quote-section">
+  <div class="asym">
+    <div class="side"><span class="section-label">De ce LYOPET la Nanoel</span></div>
+    <div>
+      <blockquote class="quote-text">"Am ales LYOPET pentru ca e singurul brand pe care l-am gasit in Romania unde eticheta nu ascunde nimic. Stii exact ce mananca cainele tau. Asta nu e normal in industrie — ar trebui sa fie."</blockquote>
+      <div class="quote-source">Echipa Nanoel · Dalbhauti, Vrancea</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND NAV FOOTER -->
+<div class="brand-nav-footer">
+  <a href="#" class="brand-nav-link" style="color:#5C3D0A;">← Inapoi la toate brandurile</a>
+  <span class="brand-nav-center">NANOEL</span>
+  <a href="egeo.html" class="brand-nav-link" style="color:#E8B84B;">Urmatorul brand: EGEO →</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <span class="footer-brand-name">NANOEL</span>
+      <p class="footer-tagline">Distribuitor exclusiv al brandurilor LYOPET, EGEO, AELLIS si PerfectCare in Romania.</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Magazine</span>
+      <ul class="footer-links">
+        <li><a href="#">Hrana pentru caini</a></li>
+        <li><a href="#">Hrana pentru pisici</a></li>
+        <li><a href="#">Produse de igiena</a></li>
+        <li><a href="#">Suplimente</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Branduri</span>
+      <ul class="footer-links">
+        <li><a href="lyopet.html">LYOPET</a></li>
+        <li><a href="egeo.html">EGEO</a></li>
+        <li><a href="aellis.html">AELLIS</a></li>
+        <li><a href="perfectcare.html">PerfectCare</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Informatii</span>
+      <ul class="footer-links">
+        <li><a href="#">Despre Nanoel</a></li>
+        <li><a href="#">Blog nutritie</a></li>
+        <li><a href="#">Contact & Suport</a></li>
+        <li><a href="#">Livrare & Retur</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Nanoel SRL · nanoel.ro</span>
+    <div class="footer-legal">
+      <a href="#">Termeni si conditii</a>
+      <a href="#">Confidentialitate</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
